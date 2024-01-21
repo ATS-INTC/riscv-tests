@@ -198,6 +198,9 @@ int towers_verify( struct Towers* this )
 
 int main( int argc, char* argv[] )
 {
+  printf("test begin\n");
+  uint64_t *read_reg = 0x10000000;
+  printf("read res 0x%lx\n", *read_reg);
   struct Towers towers;
   int i;
 
