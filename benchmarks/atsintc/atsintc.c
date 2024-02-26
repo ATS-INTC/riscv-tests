@@ -6,12 +6,14 @@ int main( int argc, char* argv[] ) {
     uint64_t *read_reg = 0x10000000;
     uint64_t *write_reg = 0x10000008;
     int i = 0;
-    for (i = 0; i < 8; i ++) {
+    for (i = 0; i < 3; i ++) {
         *write_reg = 0x19990100 + i;
-		printf("read res 0x%lx\n", *read_reg);
+		    printf("wait a moment\n");
     }
-    for (i = 0; i < 8; i ++) {
-        printf("a read res 0x%lx\n", *read_reg);
+    uint64_t res = 0;
+    for (i = 0; i < 3; i ++) {
+      res = *read_reg;
+      printf("a read res 0x%lx\n", res);
     }
 
     return 0; 
