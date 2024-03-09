@@ -30,7 +30,7 @@ void test_priority_queue() {
 
 void test_extintr_handler() {
     int i = 0;
-    int count = 1;
+    int count = 6;
 
     
     
@@ -49,34 +49,22 @@ void test_extintr_handler() {
         *ext1 = 0x0116 + i;
         printf("ext1 registe handler\n");
     }
-
-    // uint64_t *read_reg0 = 0x10300000;
-    // uint64_t res = 0;
-    // for (i = 0; i < count; i ++) {
-    //     res = *read_reg0;
-    //     printf("read extintr handler 0x%lx\n", res);
-    // }
-    // uint64_t *read_reg1 = 0x10300008;
-    // for (i = 0; i < count; i ++) {
-    //     res = *read_reg1;
-    //     printf("read extintr handler 0x%lx\n", res);
-    // }
-    // for (i = 0; i < count; i ++) {
-    //     *ext2 = 0x0126 + i;
-    //     printf("ext2 registe handler\n");
-    // }
-    // for (i = 0; i < count; i ++) {
-    //     *ext3 = 0x0136 + i;
-    //     printf("ext3 registe handler\n");
-    // }
-    // for (i = 0; i < count; i ++) {
-    //     *ext4 = 0x0146 + i;
-    //     printf("ext4 registe handler\n");
-    // }
-    // for (i = 0; i < count; i ++) {
-    //     *ext5 = 0x0156 + i;
-    //     printf("ext5 registe handler\n");
-    // }
+    for (i = 0; i < count; i ++) {
+        *ext2 = 0x0126 + i;
+        printf("ext2 registe handler\n");
+    }
+    for (i = 0; i < count; i ++) {
+        *ext3 = 0x0136 + i;
+        printf("ext3 registe handler\n");
+    }
+    for (i = 0; i < count; i ++) {
+        *ext4 = 0x0146 + i;
+        printf("ext4 registe handler\n");
+    }
+    for (i = 0; i < count; i ++) {
+        *ext5 = 0x0156 + i;
+        printf("ext5 registe handler\n");
+    }
 
     uint64_t *extintr0 = 0x10200000;
     uint64_t *extintr1 = 0x10200008;
@@ -86,23 +74,23 @@ void test_extintr_handler() {
     uint64_t *extintr5 = 0x10200028;
 
     
-    // for (i = 0; i < count; i ++) {
-    //     *extintr2 = 0x01 + i;
-    //     printf("extintr2 interrupt occurred\n");
-    // }
-    // for (i = 0; i < count; i ++) {
-    //     *extintr3 = 0x01 + i;
-    //     printf("extintr3 interrupt occurred\n");
-    // }
+    for (i = 0; i < count; i ++) {
+        *extintr2 = 0x01 + i;
+        printf("extintr2 interrupt occurred\n");
+    }
+    for (i = 0; i < count; i ++) {
+        *extintr3 = 0x01 + i;
+        printf("extintr3 interrupt occurred\n");
+    }
     
-    // for (i = 0; i < count; i ++) {
-    //     *extintr4 = 0x01 + i;
-    //     printf("extintr4 interrupt occurred\n");
-    // }
-    // for (i = 0; i < count; i ++) {
-    //     *extintr5 = 0x01 + i;
-    //     printf("extintr5 interrupt occurred\n");
-    // }
+    for (i = 0; i < count; i ++) {
+        *extintr4 = 0x01 + i;
+        printf("extintr4 interrupt occurred\n");
+    }
+    for (i = 0; i < count; i ++) {
+        *extintr5 = 0x01 + i;
+        printf("extintr5 interrupt occurred\n");
+    }
     uint64_t *write_reg0 = 0x10000008;
     for (i = 0; i < count; i ++) {
         *write_reg0 = 0x019990109 + i;
@@ -119,7 +107,7 @@ void test_extintr_handler() {
     
     uint64_t *read_reg = 0x10000000;
     uint64_t res = 0;
-    for (i = 0; i < count * 3; i ++) {
+    for (i = 0; i < count * 7; i ++) {
         res = *read_reg;
         printf("read extintr handler 0x%lx\n", res);
     }
