@@ -30,16 +30,16 @@ void test_priority_queue() {
 
 void test_extintr_handler() {
     int i = 0;
-    int count = 6;
+    int count = 4;
 
     
     
-    uint64_t *ext0 = 0x10FFD000;
-    uint64_t *ext1 = 0x10FFD008;
-    uint64_t *ext2 = 0x10FFD010;
-    uint64_t *ext3 = 0x10FFD018;
-    uint64_t *ext4 = 0x10FFD020;
-    uint64_t *ext5 = 0x10FFD028;
+    uint64_t *ext0 = 0x10000900;
+    uint64_t *ext1 = 0x10000908;
+    uint64_t *ext2 = 0x10000910;
+    uint64_t *ext3 = 0x10000918;
+    uint64_t *ext4 = 0x10000920;
+    uint64_t *ext5 = 0x10000928;
 
     for (i = 0; i < count; i ++) {
         *ext0 = 0x0106 + i;
@@ -107,7 +107,7 @@ void test_extintr_handler() {
     
     uint64_t *read_reg = 0x10000000;
     uint64_t res = 0;
-    for (i = 0; i < count * 7; i ++) {
+    for (i = 0; i < count * 8; i ++) {
         res = *read_reg;
         printf("read extintr handler 0x%lx\n", res);
     }
