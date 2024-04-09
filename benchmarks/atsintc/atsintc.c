@@ -107,6 +107,14 @@ void test_extintr_handler() {
     
     uint64_t *read_reg = 0x10000000;
     uint64_t res = 0;
+    for (i = 0; i < 1; i ++) {
+        *ext4 = 0x0146 + i;
+        printf("ext4 registe handler\n");
+    }
+    for (i = 0; i < 1; i ++) {
+        *extintr4 = 0x01 + i;
+        printf("extintr4 interrupt occurred\n");
+    }
     for (i = 0; i < count * 8; i ++) {
         res = *read_reg;
         printf("read extintr handler 0x%lx\n", res);
